@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 
+font-family: 'Montserrat', sans-serif;  (footer)
+
+font-family: 'Poppins', sans-serif; (text -400) 
+
+font-family: 'PT Serif', serif; (headings -600) [ocupation 400] */
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+
+  background-color: #fafafa;
+  font-size: 1.125rem;
+}
+
+img {
+  max-height: 100%;
+  display: block;
+}
