@@ -37,22 +37,52 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![Laptop View](./assets/images/laptopscrnshot.jpg)
+- Laptop layout of MY Team
+
+
+![Mobile View](./assets/images/mobilescrnshot.jpg)
+- Mobile layout of MY Team
 
 Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+- Would have liked to structure my CSS better on this + a better turnaround time never hurt
 
 ### Built With
 
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
+<!-- This section should list any major frameworks that you built your project 
+using. Here are a few examples.-->
 
-- [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- Semantic HTML + CSS [ Grid]
+
+- Used grid to style both the heading and main sections of the team
+- Used the `nth:child()` pseudo selector to bring out the Y transformation of certain elements of the team
+- 
+```css
+@media only screen and (width > 600px) {
+  header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+  }
+}
+@media only screen and (width < 850px) {
+  .da__crew {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  }
+  .crew {
+    max-width: 270px;
+  }
+  .crew:nth-child(3n-1) {
+    transform: translateY(0%);
+  }
+  .crew:nth-child(even) {
+    transform: translateY(20%);
+  }
+}
+
+```
+
 
 ## Features
 
@@ -65,9 +95,8 @@ This application/site was created as a submission to a [DevChallenges](https://d
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For exmpale -->
 
-- [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
-- [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
+- [Smol Responsive CSS Grid by Stephanie Eckles](https://smolcss.dev/)
+- Twitter [Stephanie Eckles](https://twitter.com/5t3ph)
 
 ## Contact
 
