@@ -1,7 +1,6 @@
 *,
 *::after,
 *::before {
-  margin: 0;
   box-sizing: border-box;
 }
 /* 
@@ -16,17 +15,134 @@ h2,
 h3,
 h4,
 p {
+  padding: 0;
   margin: 0;
 }
 
 body {
   min-height: 100vh;
-
   background-color: #fafafa;
   font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "PT Serif", serif;
+  font-weight: 600;
+}
+
+header {
+  margin-block-start: 1.5rem;
+}
+
+header h1 {
+  font-size: 2.25rem;
+  margin-block-end: 1rem;
+}
+
+.header__body h2 {
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  padding-block-end: 0.7rem;
+}
+
+.header__text {
+  font-family: "Poppins", sans-serif;
+  font-size: 400;
+}
+
+footer {
+  font-size: 0.875rem;
+  font-family: "Montserrat", sans-serif;
+  color: #a9a9a9;
+  text-align: center;
+  padding-block: 1rem;
+}
+
+footer a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+}
+
+footer a:hover {
+  color: #a9a9a9;
 }
 
 img {
   max-height: 100%;
   display: block;
+}
+
+.container {
+  width: min(1000px, 100% - 2rem);
+  margin-inline: auto;
+}
+
+.da__crew {
+  margin-block: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 2rem;
+}
+
+.crew {
+  position: relative;
+  max-width: 300px;
+  padding-inline: 2rem;
+}
+
+.crew h3 {
+  padding-block: 0.7rem;
+}
+
+.crew img {
+  width: 100%;
+}
+
+.crew__title {
+  position: absolute;
+  text-transform: uppercase;
+  font-family: "PT Serif", serif;
+  font-size: 400;
+  top: 15%;
+  right: -25%;
+  transform: rotate(90deg);
+}
+
+.crew:nth-child(3n-1) {
+  transform: translateY(20%);
+}
+
+@media only screen and (width > 600px) {
+  header {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr;
+  }
+}
+@media only screen and (width < 850px) {
+  .da__crew {
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  }
+  .crew {
+    max-width: 270px;
+  }
+  .crew:nth-child(3n-1) {
+    transform: translateY(0%);
+  }
+  .crew:nth-child(even) {
+    transform: translateY(20%);
+  }
+}
+
+@media only screen and (width < 550px) {
+  .da__crew {
+    place-items: center;
+  }
+  .crew:nth-child(even) {
+    transform: translateY(0%);
+  }
 }
